@@ -1,0 +1,36 @@
+Tutorial 6 - Cracking passwords
+
+Installing ncrack (Use NOOBS):
+
+apt-get install build-essential checkinstall libssl-dev libssh-dev
+cd ~ && wget http://nmap.org/ncrack/dist/ncrack-0.4ALPHA.tar.gz
+tar -xzvf ncrack-0.4ALPHA.tar.gz && cd ncrack-0.4ALPHA
+./configure
+make
+mkdir /usr/local/share/ncrack /usr/local/share/man/man1
+checkinstall -D --nodoc -y
+dpkg -s ncrack
+
+Show all current users on Linux:
+
+cut -d: -f1 /etc/passwd
+
+Add a new user:
+
+sudo adduser new_username
+
+Switch between users on Linux terminal:
+
+su username
+
+Hydra command:
+
+hydra -l igor -P passwords.txt localhost ssh
+
+If needed, remember to install ssh
+
+sudo apt-get install openssh-server openssh-client
+
+Installing hydra:
+
+sudo apt-get install hydra hydra-gtk

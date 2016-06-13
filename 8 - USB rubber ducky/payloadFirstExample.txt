@@ -1,0 +1,11 @@
+DELAY 2000
+CTRL-ALT F1
+DELAY 1000
+STRING cut -d: -f1 /etc/passwd
+DELAY 100
+ENTER
+STRING echo 'end of script, terminal will be closed in 10 seconds'
+ENTER
+DELAY 10000
+CTRL-ALT F7
+ENTER
